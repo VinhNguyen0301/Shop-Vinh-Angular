@@ -1,21 +1,38 @@
 <app-toast [message]="toast.message"></app-toast>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Image</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let product of products">
-      <td>{{product.name}}</td>
-      <td>{{product.price}}</td>
-      <td><img src="{{product.image}}" width="50"></td>
-      <td>
-      <button class="btn btn-sm btn-primary" (click)="removeProduct(product)"><i class="fa fa-trash"></i> Remove</button>
-    </td>
-    </tr>
-  </tbody>
-</table>
+<div class="col-md-12">
+<p class="text-muted lead">You currently have {{products ? products.length : 0}} item(s) in your cart.</p>
+</div>
+<div class="col-md-12 clearfix" id="basket">
+<div class="box">
+  <form method="post" action="shop-checkout1.html">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="2">Name</th>
+            <th>Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>
+              <a href="#">
+                <img src="{{product.image}}" alt="White Blouse Armani">
+              </a>
+            </td>
+            <td>{{product.name}}</td>
+          <td>
+            {{product.price}}
+          </td>
+          <td><a (click)="removeProduct(product)"><i class="fa fa-trash-o"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- /.table-responsive -->
+</form>
+</div>
+<!-- /.box -->
+</div>

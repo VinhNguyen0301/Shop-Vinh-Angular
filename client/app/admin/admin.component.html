@@ -129,7 +129,7 @@
       <div class="form-group">
         <input class="form-control" type="text" name="image" formControlName="image" placeholder="Image">
       </div>
-      <div class="input-group">
+      <div class="form-group">
         <select class="form-control" name="category_id" formControlName="category_id">
           <option value="" selected disabled>Select Category</option>
           <option *ngFor="let category of categories" value="{{ category._id }}">
@@ -151,7 +151,7 @@
       <div class="form-group">
         <input class="form-control" type="text" name="image" [(ngModel)]="product.image" placeholder="Image" step="any" min="0" required>
       </div>
-      <div class="input-group">
+      <div class="form-group">
         <select class="form-control" name="category_id" [(ngModel)]="product.category.name">
           <option value="" selected disabled>Select Category</option>
           <option *ngFor="let category of categories">

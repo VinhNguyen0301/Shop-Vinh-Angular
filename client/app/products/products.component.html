@@ -1,64 +1,50 @@
 <app-loading [condition]="isLoading"></app-loading>
 <app-toast [message]="toast.message"></app-toast>
-<!-- <div class="row">
-  <div class="col-md-3">
-    <div class="list-group">
-      <a (click)="filterCategory(category)" class="list-group-item list-group-item-action" *ngFor="let category of categories">{{category.name}}</a>
+<!-- *** LEFT COLUMN ***
+_________________________________________________________ -->
+<div class="col-sm-3">
+<!-- *** MENUS AND FILTERS ***
+_________________________________________________________ -->
+  <div class="panel panel-default sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title">Categories</h3>
     </div>
-  </div>
-  <div class="col-md-9">
-    <div class="card" *ngIf="!isLoading && !isDetail">
-      <h4 class="card-header">Products ({{products.length}})</h4>
-      <div class="card-block">
-        <div *ngIf="products.length === 0">
-          There is no product.
-        </div>
-        <div *ngIf="!isEditing">
-          <div class="row">
-            <div class="col-sm-6" *ngFor="let product of products">
-              <div class="card">
-                <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
-                <div class="card-block">
-                  <h3 class="card-title">{{ product.name }}</h3>
-                  <p class="card-text">{{ product.price }}</p>
-                  <a routerLink="/detail/{{product._id}}" href="#" class="btn btn-primary">Detail</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="panel-body">
+      <ul class="nav nav-pills nav-stacked category-menu">
+        <li *ngFor="let category of categories">
+          <a (click)="filterCategory(category)">{{category.name}}</a>
+        </li>
+      </ul>
     </div>
-  </div>
-</div> -->
-<div class="products jas-row">
-  <div class="jas-col-md-4 jas-col-sm-4 jas-col-xs-6 mt__30 post-682 product type-product status-publish has-post-thumbnail product_cat-new-pieces product_cat-sweaters-cardigans first instock shipping-taxable purchasable product-type-variable has-default-attributes has-children" *ngFor="let product of products">
-    <div class="product-inner pr">
-        <div class="product-image pr">
-            <div class="yith-wcwl-add-to-wishlist ts__03 mg__0 pa add-to-wishlist-682">
-                <div class="yith-wcwl-add-button show"><a href="http://maisonshop.ru/wishlist/" data-product-id="682" data-product-type="variable" class="add_to_wishlist cw"><i class="fa fa-heart-o"></i></a><i class="fa fa-spinner fa-pulse ajax-loading pa" style="visibility:hidden"></i>
-                </div>
-                <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;"><a class="chp" href="http://maisonshop.ru/wishlist/"><i class="fa fa-heart"></i></a>
-                </div>
-                <div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none"><a href="http://maisonshop.ru/wishlist/" class="chp"><i class="fa fa-heart"></i></a>
-                </div>
-            </div>
-            <a class="db" routerLink="/detail/{{product._id}}"><img width="500" height="600" src="{{product.image}}" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="" sizes="(max-width: 500px) 100vw, 500px" src="{{product.image}}"/>
-            </a>
-            <div class="product-btn pa flex column ts__03">
-                <a class="btn-quickview cd br__40 pl__25 pr__25 bgw tc dib" href="javascript:void(0);" data-prod="682" routerLink="/detail/{{product._id}}">Quick View</a>
-            </div>
-
-        </div>
-        <!-- .product-image -->
-        <div class="product-info mt__15">
-            <p id="product-subtitle-682" class="product-subtitle subtitle-682">{{product.name}}</p>
-            <h3 class="product-title pr fs__14 mg__0 fwm"><a class="cd chp" href="http://maisonshop.ru/shop/slim-fit-grey-sweater/">{{product.des}}</a></h3>
-            <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>{{product.price}}</span>
-            </span>
-        </div>
-        <!-- .product-info -->
-    </div>
-    <!-- .product-inner -->
   </div>
 </div>
+<!-- /.col-md-3 -->
+<!-- *** LEFT COLUMN END *** -->
+<!-- *** RIGHT COLUMN ***
+_________________________________________________________ -->
+<div class="col-sm-9">
+  <div class="row products">
+    <div class="col-md-4 col-sm-6" *ngFor="let product of products">
+      <div class="product">
+        <div class="image">
+          <a routerLink="/detail/{{product._id}}">
+            <img src="{{product.image}}" alt="" class="img-responsive image1">
+          </a>
+        </div>
+        <!-- /.image -->
+        <div class="text">
+          <h3><a routerLink="/detail/{{product._id}}">{{ product.name }}</a></h3>
+          <p class="price">{{ product.price }}</p>
+          <p class="buttons">
+            <a routerLink="/detail/{{product._id}}" class="btn btn-default">View detail</a>
+          </p>
+        </div>
+        <!-- /.text -->
+      </div>
+      <!-- /.product -->
+    </div>
+  <!-- /.col-md-4 -->
+  </div>
+<!-- /.products -->
+</div>
+<!-- /.col-md-9 -->

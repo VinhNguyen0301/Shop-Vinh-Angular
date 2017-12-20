@@ -1,26 +1,33 @@
 <app-toast [message]="toast.message"></app-toast>
-
-<div class="card">
-  <h4 class="card-header">Register</h4>
-  <div class="card-block">
+<div class="col-md-12">
+  <div class="box">
+    <h2 class="text-uppercase">New account</h2>
+    <p class="lead">Not our registered customer yet?</p>
+    <hr>
     <form [formGroup]="registerForm" (ngSubmit)="register()">
-      <div class="input-group" [ngClass]="setClassUsername()">
-        <input class="form-control" type="text" name="username" formControlName="username" placeholder="Username" autofocus>
+      <div class="form-group" [ngClass]="setClassUsername()">
+        <label for="name-login">Name</label>
+        <input type="text" class="form-control" id="name-login" name="username" formControlName="username" autofocus>
       </div>
-      <div class="input-group" [ngClass]="setClassEmail()">
-        <input class="form-control" type="email" name="email" formControlName="email" placeholder="Email">
+      <div class="form-group" [ngClass]="setClassEmail()">
+        <label for="email-login">Email</label>
+        <input type="email" class="form-control" id="email-login" name="email" formControlName="email">
       </div>
-      <div class="input-group" [ngClass]="setClassPassword()">
-        <input class="form-control" type="password" name="password" formControlName="password" placeholder="Password">
+      <div class="form-group" [ngClass]="setClassPassword()">
+        <label for="password-login">Password</label>
+        <input type="password" class="form-control" id="password-login" name="password" formControlName="password">
       </div>
-      <div class="input-group">
+      <div class="form-group">
+        <label for="password-login">Role</label>
         <select class="form-control" name="role" formControlName="role">
           <option value="" selected disabled>Role</option>
           <option value="user">User</option>
           <option value="admin">Admin</option>
         </select>
       </div>
-      <button class="btn btn-primary" type="submit" [disabled]="!registerForm.valid"><i class="fa fa-user-plus"></i> Register</button>
+      <div class="text-center">
+        <button type="submit" class="btn btn-template-main" [disabled]="!registerForm.valid"><i class="fa fa-user-md"></i> Register</button>
+      </div>
     </form>
   </div>
 </div>
