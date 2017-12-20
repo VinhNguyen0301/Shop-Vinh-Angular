@@ -1,0 +1,10 @@
+<app-toast [message]="toast.message"></app-toast>
+
+<div class="media">
+  <img class="d-flex mr-3" src="{{product.image}}" alt="Generic placeholder image">
+  <div class="media-body">
+    <h5 class="mt-0">{{ product.name }}</h5>
+    <h6>{{product.price}}</h6>
+    <button class="btn btn-sm btn-primary" (click)="addToCart(product)">Add to cart</button> 
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<app-loading [condition]="isLoading"></app-loading>
+<app-toast [message]="toast.message"></app-toast>
+<div class="row">
+  <div class="col-md-3">
+    <div class="list-group">
+      <a (click)="filterCategory(category)" class="list-group-item list-group-item-action" *ngFor="let category of categories">{{category.name}}</a>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <div class="card" *ngIf="!isLoading && !isDetail">
+      <h4 class="card-header">Products ({{products.length}})</h4>
+      <div class="card-block">
+        <div *ngIf="products.length === 0">
+          There is no product.
+        </div>
+        <div *ngIf="!isEditing">
+          <div class="row">
+            <div class="col-sm-6" *ngFor="let product of products">
+              <div class="card">
+                <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
+                <div class="card-block">
+                  <h3 class="card-title">{{ product.name }}</h3>
+                  <p class="card-text">{{ product.price }}</p>
+                  <a routerLink="/detail/{{product._id}}" href="#" class="btn btn-primary">Detail</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

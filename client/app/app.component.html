@@ -1,0 +1,238 @@
+<div id="jas-wrapper">
+    <header id="jas-header" class="header-4" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+        <!-- .header__top -->
+        <div class="header__mid pl__15 pr__15 header__transparent pa w__100">
+            <div class="jas-row middle-xs pt__10 pb__10">
+                <div class="jas-col-md-2 jas-col-sm-3 jas-col-xs-3 flex start-md flex">
+                    
+                </div>
+                <div class="jas-col-md-8 jas-col-sm-6 jas-col-xs-6 center-xs">
+                    <div class="jas-branding ts__05">
+                        <a class="db" href="http://localhost:4200/">Angular Clothing
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- .jas-row -->
+        </div>
+        <!-- .header__bot -->
+        <form class="header__search w__100 dn pf" role="search" method="get" action="http://maisonshop.ru/" itemprop="potentialAction" itemscope="itemscope" itemtype="http://schema.org/SearchAction">
+            <div class="pa">
+                <input class="w__100 jas-ajax-search" type="text" name="s" placeholder="Search for..." />
+                <input type="hidden" name="post_type" value="product">
+            </div>
+            <a id="sf-close" class="pa" href="#"><i class="pe-7s-close"></i></a>
+        </form>
+        <!-- #header__search -->
+
+    </header>
+    <!-- #jas-header -->
+<!-- <div class="container"> -->
+  <div id="jas-content">
+
+<nav class="jas-navigation flex center-xs">
+  <!-- <nav class="navbar navbar-dark bg-primary"> -->
+    <!-- <div class="nav navbar-nav">
+ -->     <ul id="jas-menu" class="jas-menu clearfix">
+     <li class="menu-item menu-item-type-custom menu-item-object-custom"><a routerLink="/" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="fa fa-home"></i> Home
+      </a></li>
+      <li class="menu-item menu-item-type-custom menu-item-object-custom"><a routerLink="/login" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
+        <i class="fa fa-sign-in"></i> Login
+      </a></li>
+      <li class="menu-item menu-item-type-custom menu-item-object-custom"><a routerLink="/register" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
+        <i class="fa fa-user-plus"></i> Register
+      </a></li>
+      <li class="menu-item menu-item-type-custom menu-item-object-custom"><a routerLink="/account" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+        <i class="fa fa-user"></i> Account ({{auth.currentUser.username}})
+      </a></li>
+      <li class="menu-item menu-item-type-custom menu-item-object-custom"><a routerLink="/admin" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
+        <i class="fa fa-lock"></i> Admin
+      </a></li>
+      <li class="menu-item menu-item-type-custom menu-item-object-custom"><a routerLink="/logout" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+        <i class="fa fa-sign-out"></i> Logout
+      </a></li>
+      <li class="menu-item menu-item-type-custom menu-item-object-custom"><a routerLink="/cart" class="nav-item nav-link" routerLinkActive="active">
+        <i class="fa fa-cart-plus"></i> Cart
+      </a></li>
+       </ul>
+  </nav>
+
+ <div class="jas-wc dib w__100 mb__60" role="main">
+            <div class="page-head pr tc">
+                <div class="jas-container pr">
+                    <h1 class="mb__5 cw">Shop</h1>
+                    <p class="mg__0">shop men’s fashion online
+                    </p>
+                </div>
+            </div>
+            <nav class="woocommerce-breadcrumb"><a href="http://maisonshop.ru">Home</a><i class="fa fa-angle-right"></i>Shop</nav>
+
+            <div class="jas-full pl__30 pr__30">
+                <div class="jas-row">
+                    <div class="jas-col-md-9 jas-col-sm-9 jas-col-xs-12">
+                        
+                          <router-outlet></router-outlet>
+                        
+                    </div>
+                    <!-- .jas-columns-* -->
+                    <!-- <div class="sidebar jas-col-md-3 jas-col-sm-3 jas-col-xs-12 mt__30 first-md first-sm">
+                        <aside id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories">
+                            <h4 class="widget-title fwm">Categories</h4>
+                            <ul class="product-categories">
+                                <li class="cat-item" *ngFor="let category of categories">
+                                  <a routerLink="/category/{{category.name}}" routerLinkActive="active" >{{category.title}}</a>
+                                </li>
+                            </ul>
+                        </aside>
+                    </div> -->
+                </div>
+                <!-- .jas-row -->
+            </div>
+        </div>
+
+        
+        <footer id="jas-footer" class="bgbl footer-2" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+            <div class="footer__top pb__80 pt__80">
+                <div class="jas-container pr">
+                    <div class="jas-row">
+                        <div class="jas-col-md-3 jas-col-sm-6 jas-col-xs-12">
+                            <aside id="mc4wp_form_widget-2" class="widget widget_mc4wp_form_widget">
+                                <h3 class="widget-title fwsb fs__16 mg__0 mb__30">SUBSCRIBE TO</h3>
+                                <script type="text/javascript">
+                                    (function() {
+                                        if (!window.mc4wp) {
+                                            window.mc4wp = {
+                                                listeners: [],
+                                                forms: {
+                                                    on: function(event, callback) {
+                                                        window.mc4wp.listeners.push({
+                                                            event: event,
+                                                            callback: callback
+                                                        });
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    })();
+                                </script>
+                             
+                                <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-487" method="post" data-id="487" data-name="Subscription">
+                                    <div class="mc4wp-form-fields">
+                                        <p>
+                                            <input type="email" name="EMAIL" placeholder="Enter your e-mail adres" required />
+                                        </p>
+
+                                        <p>
+                                            <input type="submit" value="Sign up" />
+                                        </p>
+                                        <div style="display: none;">
+                                            <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" />
+                                        </div>
+                                        <input type="hidden" name="_mc4wp_timestamp" value="1513479182" />
+                                        <input type="hidden" name="_mc4wp_form_id" value="487" />
+                                        <input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" />
+                                    </div>
+                                    <div class="mc4wp-response"></div>
+                                </form>
+                                <!-- / MailChimp for WordPress Plugin -->
+                            </aside>
+                        </div>
+                        <div class="jas-col-md-3 jas-col-sm-6 jas-col-xs-12">
+                            <aside id="text-2" class="widget widget_text">
+                                <h3 class="widget-title fwsb fs__16 mg__0 mb__30">Helps</h3>
+
+                            </aside>
+                        </div>
+                        <div class="jas-col-md-3 jas-col-sm-6 jas-col-xs-12">
+                            <aside id="text-3" class="widget widget_text">
+                                <h3 class="widget-title fwsb fs__16 mg__0 mb__30">More Information</h3>
+                              
+                            </aside>
+                        </div>
+                        <div class="jas-col-md-3 jas-col-sm-6 jas-col-xs-12">
+                            <aside id="text-4" class="widget widget_text">
+                                <h3 class="widget-title fwsb fs__16 mg__0 mb__30">Social network</h3>
+                                <div class="textwidget">
+                                    <p><a href="https://www.instagram.com/marssin0/">Instagram</a>
+                                    <p><a href="https://www.facebook.com/people/Mar-Sino/100003141897522">Facebook</a>
+                                    </p>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                    <!-- .jas-row -->
+                </div>
+                <!-- .jas-container -->
+            </div>
+            <!-- .footer__top -->
+            <div class="footer__bot pt__20 pb__20 lh__1">
+                <div class="jas-container pr tc">
+                    © 2017 ANGULAR 4 UTE </div>
+            </div>
+            <!-- .footer__bot -->
+        </footer>
+        <!-- #jas-footer -->
+    </div>
+    <!-- #jas-wrapper -->
+    <script type="text/javascript">
+        (function() {
+            function addEventListener(element, event, handler) {
+                if (element.addEventListener) {
+                    element.addEventListener(event, handler, false);
+                } else if (element.attachEvent) {
+                    element.attachEvent('on' + event, handler);
+                }
+            }
+
+            function maybePrefixUrlField() {
+                if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+                    this.value = "http://" + this.value;
+                }
+            }
+
+            var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+            if (urlFields && urlFields.length > 0) {
+                for (var j = 0; j < urlFields.length; j++) {
+                    addEventListener(urlFields[j], 'blur', maybePrefixUrlField);
+                }
+            } /* test if browser supports date fields */
+            var testInput = document.createElement('input');
+            testInput.setAttribute('type', 'date');
+            if (testInput.type !== 'date') {
+
+                /* add placeholder & pattern to all date fields */
+                var dateFields = document.querySelectorAll('.mc4wp-form input[type="date"]');
+                for (var i = 0; i < dateFields.length; i++) {
+                    if (!dateFields[i].placeholder) {
+                        dateFields[i].placeholder = 'YYYY-MM-DD';
+                    }
+                    if (!dateFields[i].pattern) {
+                        dateFields[i].pattern = '[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])';
+                    }
+                }
+            }
+
+        })();
+    </script>
+   
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var JAS_Data_Js = {
+            "load_more": "Load More",
+            "no_more_item": "No More Item To Show",
+            "days": "days",
+            "hrs": "hrs",
+            "mins": "mins",
+            "secs": "secs",
+            "popup_remove": "Removed from the cart",
+            "popup_undo": "Undo?",
+            "header_sticky": "1",
+            "permalink": ""
+        };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='assets/js/theme.js'></script>
+  </div>
+ <!--  <router-outlet></router-outlet> -->
+
