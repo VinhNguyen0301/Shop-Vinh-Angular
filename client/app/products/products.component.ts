@@ -45,13 +45,13 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  filterCategory(category: Category) {
+  filterCategory(filterCategory: Category) {
     this.productService.getProducts().subscribe(
       data => {
         var filterProduct = []
         console.log(data)
         data.forEach(product => {
-          if (product.category_name === category.name) {
+          if (product["category"]._id === filterCategory._id) {
             filterProduct.push(product)
           }
         });
