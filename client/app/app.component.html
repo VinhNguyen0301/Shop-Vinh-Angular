@@ -21,25 +21,25 @@
           <div class="navbar-collapse collapse" id="navigation">
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a routerLink="/">Home</a>
+                <a routerLink="/" class="fa fa-home"> Home</a>
               </li>
               <li class="use-yamm yamm-fw" *ngIf="!auth.loggedIn">
-                <a routerLink="/login">Login</a>
+                <a routerLink="/login" class="fa fa-sign-in"> Login</a>
               </li>
               <li class="use-yamm yamm-fw" *ngIf="!auth.loggedIn">
-                <a routerLink="/register">Register</a>
+                <a routerLink="/register" class="fa fa-user-plus"> Register</a>
               </li>
               <li *ngIf="auth.loggedIn">
-                <a routerLink="/account">Account ({{auth.currentUser.username}})</a>
+                <a routerLink="/account" class="fa fa-user"> Account ({{auth.currentUser.username}})</a>
               </li>
               <li *ngIf="auth.loggedIn && auth.isAdmin">
-                <a routerLink="/admin">Admin</a>
+                <a routerLink="/admin" class="fa fa-lock"> Admin</a>
               </li>
               <li class="use-yamm yamm-fw" *ngIf="auth.loggedIn">
-                <a routerLink="/logout">Logout</a>
+                <a routerLink="/logout" class="fa fa-sign-out"> Logout</a>
               </li>
               <li class="use-yamm yamm-fw">
-                <a routerLink="/cart">Cart</a>
+                <a routerLink="/cart" class="fa fa-cart-plus"> Cart</a>
               </li>
             </ul>
           </div>
@@ -85,26 +85,26 @@
     <div class="container">
       <div class="col-md-4 col-sm-6">
         <h4>About us</h4>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        <p>Website online store write by MEAN STACK (using angular4,5).We study in UTE</p>
         <hr class="hidden-md hidden-lg hidden-sm">
       </div>
       <!-- /.col-md-3 -->
       <div class="col-md-4 col-sm-6">
-        <h4>Blog</h4>
+        <h4>Social network</h4>
         <div class="blog-entries">
           <div class="item same-height-row clearfix">
             <div class="name same-height-always">
-              <h5><a href="#">Blog post name</a></h5>
+              <h5><a href="https://www.facebook.com/people/Mar-Sino/100003141897522">Facebook</a></h5>
             </div>
           </div>
           <div class="item same-height-row clearfix">
             <div class="name same-height-always">
-              <h5><a href="#">Blog post name</a></h5>
+              <h5><a href="https://www.instagram.com/">Instagram</a></h5>
             </div>
           </div>
           <div class="item same-height-row clearfix">
             <div class="name same-height-always">
-              <h5><a href="#">Very very long blog post name</a></h5>
+              <h5><a href="#">Blog channel</a></h5>
             </div>
           </div>
         </div>
@@ -114,12 +114,12 @@
       <div class="col-md-4 col-sm-6">
         <h4>Contact</h4>
         <p><strong>Universal Ltd.</strong>
-          <br>13/25 New Avenue
-          <br>Newtown upon River
-          <br>45Y 73J
-          <br>England
+          <br>21C/42 Vo Van Ngan
+          <br>FullHouse Tower
+          <br>Thu Duc district
+          <br>Ho Chi Minh City
           <br>
-          <strong>Great Britain</strong>
+          <strong>Viet Nam</strong>
         </p>
         <hr class="hidden-md hidden-lg hidden-sm">
       </div>
@@ -133,7 +133,7 @@
   <div id="copyright">
     <div class="container">
       <div class="col-md-12">
-        <p class="pull-left">&copy; 2017.</p>
+        <p class="pull-left">&copy;VinhNguyen2017.</p>
       </div>
     </div>
   </div>
