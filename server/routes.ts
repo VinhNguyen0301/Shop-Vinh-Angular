@@ -3,6 +3,7 @@ import * as express from 'express';
 import ProductCtrl from './controllers/product';
 import CategoryCtrl from './controllers/category';
 import UserCtrl from './controllers/user';
+import OrderCtrl from './controllers/order';
 import Product from './models/product';
 import User from './models/user';
 import Category from './models/category';
@@ -14,6 +15,15 @@ export default function setRoutes(app) {
   const productCtrl = new ProductCtrl();
   const userCtrl = new UserCtrl();
   const categoryCtrl = new CategoryCtrl();
+  const orderCtrl = new OrderCtrl();
+
+  // Orders
+  router.route('/orders').get(orderCtrl.getAll);
+  router.route('/orders/count').get(orderCtrl.count);
+  router.route('/order').post(orderCtrl.insert);
+  router.route('/order/:id').get(orderCtrl.get);
+  router.route('/order/:id').put(orderCtrl.update);
+  router.route('/order/:id').delete(orderCtrl.delete);
 
   // Products
   router.route('/products').get(productCtrl.getAll);

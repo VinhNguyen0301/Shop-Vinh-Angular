@@ -3,6 +3,39 @@
 <app-toast [message]="toast.message"></app-toast>
 
 <div class="card" *ngIf="!isLoading">
+  <h4 class="card-header">Orders ({{orders.length}})</h4>
+  <div class="card-block">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-default">
+        <tr>
+          <th>Products</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="users.length === 0">
+        <tr>
+          <td colspan="4">There is no order.</td>
+        </tr>  
+      </tbody>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>
+            <div *ngFor="let product of order.products">
+              <p>{{product.name}}</p>
+            </div>
+          </td>
+          <td>
+            <button class="btn btn-sm btn-danger" [disabled]="auth.currentUser.role === 'admin'">
+              <i class="fa fa-trash"></i>
+            </button>
+          </td>
+        </tr>  
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card" *ngIf="!isLoading">
   <h4 class="card-header">Registered users ({{users.length}})</h4>
   <div class="card-block">
     <table class="table table-bordered table-striped">

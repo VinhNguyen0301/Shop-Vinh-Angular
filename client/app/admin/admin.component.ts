@@ -6,10 +6,12 @@ import { ProductService } from '../services/product.service';
 import { CategoryService } from '../services/category.service';
 import { AuthService } from '../services/auth.service';
 import { UserService } from '../services/user.service';
+import { OrderService } from '../services/order.service';
 
 import { User } from '../shared/models/user.model';
 import { Product } from '../shared/models/product.model';
 import { Category } from '../shared/models/category.model';
+import { Order } from '../shared/models/order.model';
 
 import { ToastComponent } from '../shared/toast/toast.component';
 
@@ -23,6 +25,7 @@ export class AdminComponent implements OnInit {
   category = new Category();
   categories: Category[] = [];
   products: Product[] = [];
+  orders: Order[] = [];
   users: User[] = [];
   isLoading = true;
   isEditingProduct = false;
@@ -41,12 +44,14 @@ export class AdminComponent implements OnInit {
               private userService: UserService,
               private productService: ProductService,
               private categoryService: CategoryService,
+              private orderService: OrderService,
               private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.getProducts();
     this.getCategories();
     this.getUsers();
+    this.getOrders();
     this.addProductForm = this.formBuilder.group({
       name: this.name,
       price: this.price,
@@ -56,6 +61,17 @@ export class AdminComponent implements OnInit {
     this.addCategoryForm = this.formBuilder.group({
       name: this.name
     });
+  }
+
+  getOrders() {
+    this.orderService.getOrders().subscribe(
+      data => {
+        this.orders = data;
+        console.log(data)
+      },
+      error => console.log(error),
+      () => this.isLoading = false
+    );
   }
 
   getCategories() {

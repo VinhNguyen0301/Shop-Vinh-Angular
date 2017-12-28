@@ -4,6 +4,7 @@ import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
 import { ProductService } from './services/product.service';
 import { CategoryService } from './services/category.service';
+import { OrderService } from './services/order.service';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardLogin } from './services/auth-guard-login.service';
@@ -42,7 +43,8 @@ import { DetailComponent } from './detail/detail.component';
     AuthGuardAdmin,
     ProductService,
     UserService,
-    CategoryService
+    CategoryService,
+    OrderService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

@@ -38,13 +38,13 @@ export class DetailComponent implements OnInit {
 
   addToCart(product:Product) {
     var a;
+    
     if (localStorage.getItem('cart') === null) {
       a = [];
     } else {
       a = JSON.parse(localStorage.getItem('cart'));
     }
-     
-    console.log(a)
+    
     a.push(product);
     localStorage.setItem('cart', JSON.stringify(a));
     this.toast.setMessage('Add to cart!', 'success')
